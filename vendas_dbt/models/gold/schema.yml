@@ -1,0 +1,17 @@
+models:
+  - name: gold_vendas_7_dias
+    columns:
+      - name: total_vendas
+        description: "Número total de transações de vendas do produto na data especificada."
+
+  - name: gold_vendas_por_vendedor
+    description: "Tabela Gold que agrega as vendas por vendedor nos últimos 7 dias. Exibindo o desempenho"
+    columns: 
+      - name: vendedor
+        description: "Email do vendedor que realizou as vendas."
+      - name: data
+        description: "Data das vendas agregadas por vendedor"
+      - name: total_valor
+        description: "Valor total das vendas realizadas pelo vendedor na data especificada."
+      - name: total_quantidade
+        description: "Quantidade total de produtos vendidos pelo vendedor na data especificada."
