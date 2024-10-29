@@ -4,13 +4,13 @@ WITH cleaned_data AS(
     SELECT
         email,
         DATE(data) AS data,
-        valor,
+        round(cast(valor as decimal(10,2)),2) as valor,
         quantidade,
-        produto
+        LOWER(produto) as produto
     FROM
         {{ ref('bronze_vendas') }}
     WHERE
-        valor > 0
+        valor > 1000
         AND valor < 8000
         AND data <= CURRENT_DATE
 )
